@@ -13,6 +13,7 @@ def fetch_director(obj):
             director.append(i['name'])
     return director
 
+import ast
 movies['director'] = cast['crew'].apply(fetch_director)
 missing_values=movies[movies.isnull().any(axis=1)]
 print(missing_values)
